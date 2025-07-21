@@ -127,3 +127,10 @@ Includes JWT authentication, product & category management, cart-to-order flow, 
 
 ```bash
 ws://localhost:8000/ws/notifications/<access_token>/
+
+
+## ⚙️ Installation
+
+### 🐳 Docker (recommended)
+```bash
+docker-compose up --build
