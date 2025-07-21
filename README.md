@@ -68,6 +68,9 @@ Advance-Ecommerce/
 ├── requirements.txt
 └── README.md
 
+```
+
+---
 
 ⭐ Users API
 Method	Endpoint	Description
