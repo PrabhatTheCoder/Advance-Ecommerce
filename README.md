@@ -72,13 +72,9 @@ Advance-Ecommerce/
 
 ---
 
+## 🚀 API Endpoints
 
-# 🛍️ Advance-Ecommerce API
-
-A scalable and extensible e-commerce backend built with Django REST Framework.  
-Includes JWT authentication, product & category management, cart-to-order flow, Redis caching, pagination, and WebSocket notifications using Django Channels.
-
----
+# Base URL - [http://3.110.88.71:8000/](http://3.110.88.71:8000/)
 
 ## 🔐 ⭐ Users
 
