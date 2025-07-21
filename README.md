@@ -47,7 +47,7 @@ You can use the provided Postman collection to test the entire API.
 - [📥 Download Postman Collection](https://github.com/PrabhatTheCoder/Advance-Ecommerce/blob/main/Advance%20Ecommerce.postman_collection.json)
 
 ### 🔥 How to use
-1. Open Postman > Import > Upload `recipe-management-collection.json`.
+1. Open Postman > Import > Upload `Advance Ecommerce.postman_collection.json`.
 2. Set the environment variables for:
    - `{{base_url}}` = `[{{BASE_URL}}app/](http://3.110.88.71:8000/)`
    - `{{access_token}}` (optional if using authenticated endpoints)
