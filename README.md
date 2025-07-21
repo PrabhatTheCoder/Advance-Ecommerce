@@ -136,7 +136,7 @@ Advance-Ecommerce/
 - Connect to WebSocket:
 
 ```bash
-ws://localhost:8000/ws/notifications/<access_token>/
+ws://0.0.0.0:8000/ws/notifications/<access_token>/
 
 
 ## ⚙️ Installation
