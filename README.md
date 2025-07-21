@@ -73,29 +73,57 @@ Advance-Ecommerce/
 ---
 
 
-⭐ Users API
-Method	Endpoint	Description
-POST	/auth/register-user/	Register a new user (creator/viewer)
-POST	/auth/login/	Login and receive access + refresh tokens
-POST	/auth/logout/	Logout (invalidate refresh token)
-POST	/auth/get-access-token/	Get new access token using refresh token
+# 🛍️ Advance-Ecommerce API
 
-📑 Ecommerce API Endpoints
-📁 Category
-Method	Endpoint	Description
-POST	/category/	Create a new product category
-GET	/list-category/	List all product categories
-DELETE	/delete-category/	Delete a product category (by ID param)
+A scalable and extensible e-commerce backend built with Django REST Framework.  
+Includes JWT authentication, product & category management, cart-to-order flow, Redis caching, pagination, and WebSocket notifications using Django Channels.
 
-📦 Product
-Method	Endpoint	Description
-POST	/product/	Create a new product (Cache Set)
-GET	/list-product/	List all products (Paginated + Cached)
-DELETE	/delete-product/	Delete a product (Cache Delete)
+---
 
-🛒 Orders
-Method	Endpoint	Description
-POST	/place-order/	Place an order from the cart
-PATCH	/update-order-status/	Update order status (Sends WebSocket Notification)
-GET	/list-user-order/	List all orders for the authenticated user
+## 🔐 ⭐ Users
 
+| Method | Endpoint                  | Description                            |
+| ------ | ------------------------- | -------------------------------------- |
+| POST   | `/auth/register-user/`    | Register a new user (creator / viewer) |
+| POST   | `/auth/login/`            | Login & get access + refresh tokens    |
+| POST   | `/auth/logout/`           | Logout (invalidate refresh token)      |
+| POST   | `/auth/get-access-token/` | Get new access token using refresh     |
+
+---
+
+## 📁 Categories
+
+| Method | Endpoint            | Description                             |
+| ------ | ------------------- | --------------------------------------- |
+| POST   | `/category/`        | Create a new product category           |
+| GET    | `/list-category/`   | List all product categories             |
+| DELETE | `/delete-category/` | Delete a product category (by ID param) |
+
+---
+
+## 📦 Products
+
+| Method | Endpoint           | Description                                  |
+| ------ | ------------------ | -------------------------------------------- |
+| POST   | `/product/`        | Create a new product (**Redis cache set**)   |
+| GET    | `/list-product/`   | List all products (**Paginated + Cached**)   |
+| DELETE | `/delete-product/` | Delete a product (**Redis cache delete**)    |
+
+---
+
+## 🛒 Orders
+
+| Method | Endpoint                | Description                                               |
+| ------ | ----------------------- | --------------------------------------------------------- |
+| POST   | `/place-order/`         | Place an order from the cart                              |
+| PATCH  | `/update-order-status/` | Update order status (**sends WebSocket notification**)    |
+| GET    | `/list-user-order/`     | List all orders for the authenticated user                |
+
+---
+
+## 🔔 WebSocket Notifications
+
+- Connect to WebSocket:
+
+```bash
+ws://localhost:8000/ws/notifications/<access_token>/
