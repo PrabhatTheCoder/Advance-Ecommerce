@@ -1,0 +1,1823 @@
+{
+	"info": {
+		"_postman_id": "48104591-90e4-4bb5-8320-c5ff4e498548",
+		"name": "Advance Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34406608",
+		"_collection_link": "https://survey-quiz.postman.co/workspace/Food-Management~670e309e-c47c-4f82-992f-75c6683025b9/collection/34406608-48104591-90e4-4bb5-8320-c5ff4e498548?action=share&source=collection_link&creator=34406608"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin2@gmail.com\",\n    \"name\": \"customer\",\n    \"password\": \"admin\",\n    \"user_type\" : \"admin\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}auth/register-user/",
+							"host": [
+								"{{BASE_URL}}auth"
+							],
+							"path": [
+								"register-user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"name\": \"admin\",\n    \"password\": \"admin\",\n    \"user_type\" : \"creator\"  // \"viewer\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/register-user/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"register-user",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jul 2025 15:34:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "583"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"email\": \"admin@gmail.com\",\n        \"username\": null,\n        \"phone_number\": null,\n        \"user_type\": \"creator\"\n    },\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMTY1MjY3LCJpYXQiOjE3NTIxNjE2NjcsImp0aSI6IjQ3Zjk2MWRiN2UzZDQ2YTQ4ZjQ5ZjYxYzNhMGJhODM3IiwidXNlcl9pZCI6MX0.QSYaVjOlCIFh9urp9rILE4U8_KyJgk8pvdvbcYH2vxM\",\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MjI0ODA2NywiaWF0IjoxNzUyMTYxNjY3LCJqdGkiOiJiZGM0ZTA4YThkYTI0NmQ5YjNjZTZhYThiNzgyZjRmMCIsInVzZXJfaWQiOjF9.ORrAMMJ92MjrsvvnwbIFDqOzJkX3i7Z_KvpZTZCbVpo\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"customer@gmail.com\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}auth/login/",
+							"host": [
+								"{{BASE_URL}}auth"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/login/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jul 2025 15:37:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "530"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"email\": \"admin@gmail.com\",\n        \"name\": null\n    },\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMTY1NDQ3LCJpYXQiOjE3NTIxNjE4NDcsImp0aSI6Ijg0NWM2Y2MwNmZlODRhOTJiYjUyMTJjOTA1YTk3MzIyIiwidXNlcl9pZCI6MX0.aJp8OyipU1H2p3DwmgVBrMQV4sugLM-0YC8lIFvW6dQ\",\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MjI0ODI0NywiaWF0IjoxNzUyMTYxODQ3LCJqdGkiOiJhZDhiOTkxNGU3YmI0NDY4Yjc2NDU4NTAzMmFmZDBjYyIsInVzZXJfaWQiOjF9.ydHgqXDPFcLqsdiVnLh5c5D-HBykEf-wj18QIms-Fys\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Access Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\" : {{refresh_token}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/get-access-token/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"get-access-token",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refresh\" : \"{{refresh_token}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/get-access-token/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"get-access-token",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 11 Jul 2025 07:50:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.18"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUyMjIzODEyLCJpYXQiOjE3NTIyMTk5MTksImp0aSI6ImE0MjBhNjE4YWU1YzQxYjg5YjE5MDQ5ODBlNWVmMzRkIiwidXNlcl9pZCI6MX0.KnvDWoeuGJ3XOHkK_OdgBgWrd5xEJxktjHU7U6BVP3Q\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/auth/logout/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refresh\": \"{{refresh_token}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/logout/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"logout",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jul 2025 15:49:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully logged out.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "App",
+			"item": [
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Place Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}app/place-order/",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"place-order",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"products\": [\n        {\"product_id\": \"87d5aa7a-8db0-4b83-adf7-4f02214fe5f1\", \"quantity\": \"2\"},\n        {\"product_id\": \"909692ef-75fe-4307-ab82-ea1bc53d477c\", \"quantity\": \"1\"}\n        \n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}app/place-order/",
+											"host": [
+												"{{BASE_URL}}app"
+											],
+											"path": [
+												"place-order",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Sun, 20 Jul 2025 21:03:51 GMT"
+										},
+										{
+											"key": "server",
+											"value": "uvicorn"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Accept"
+										},
+										{
+											"key": "allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "content-length",
+											"value": "89"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "cross-origin-opener-policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Order placed successfully\",\n    \"order_id\": \"b8c560d0-3ac3-4e2f-ad18-39a600738379\"\n}"
+								}
+							]
+						},
+						{
+							"name": "List User Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}app/list-user-order/",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"list-user-order",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List User Orders",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}app/list-user-order/",
+											"host": [
+												"{{BASE_URL}}app"
+											],
+											"path": [
+												"list-user-order",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Mon, 21 Jul 2025 05:05:18 GMT"
+										},
+										{
+											"key": "server",
+											"value": "uvicorn"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "vary",
+											"value": "Accept"
+										},
+										{
+											"key": "allow",
+											"value": "GET, HEAD, OPTIONS"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "content-length",
+											"value": "2661"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "cross-origin-opener-policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"count\": 6,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"477e7e6d-92fc-4cab-b464-2588ac7c88c6\",\n            \"status\": \"pending\",\n            \"total_price\": 500,\n            \"created_at\": \"2025-07-20T20:59:13.356528Z\",\n            \"items\": [\n                {\n                    \"product\": {\n                        \"id\": \"87d5aa7a-8db0-4b83-adf7-4f02214fe5f1\",\n                        \"name\": \"Denim Shirt\",\n                        \"description\": \"This is Denim Shirt\",\n                        \"price\": 500,\n                        \"stock\": 0,\n                        \"category\": {\n                            \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                            \"name\": \"Toys\",\n                            \"description\": \"This is Toys for kids\",\n                            \"created_by\": 1\n                        }\n                    },\n                    \"quantity\": 1,\n                    \"price\": 500\n                }\n            ]\n        },\n        {\n            \"id\": \"93258df2-d9d2-451a-89b6-f1ca700f8cb1\",\n            \"status\": \"pending\",\n            \"total_price\": 0,\n            \"created_at\": \"2025-07-20T21:03:44.751784Z\",\n            \"items\": [\n                {\n                    \"product\": {\n                        \"id\": \"87d5aa7a-8db0-4b83-adf7-4f02214fe5f1\",\n                        \"name\": \"Denim Shirt\",\n                        \"description\": \"This is Denim Shirt\",\n                        \"price\": 500,\n                        \"stock\": 0,\n                        \"category\": {\n                            \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                            \"name\": \"Toys\",\n                            \"description\": \"This is Toys for kids\",\n                            \"created_by\": 1\n                        }\n                    },\n                    \"quantity\": 2,\n                    \"price\": 500\n                }\n            ]\n        },\n        {\n            \"id\": \"b8c560d0-3ac3-4e2f-ad18-39a600738379\",\n            \"status\": \"delivered\",\n            \"total_price\": 1400,\n            \"created_at\": \"2025-07-20T21:03:52.057209Z\",\n            \"items\": [\n                {\n                    \"product\": {\n                        \"id\": \"87d5aa7a-8db0-4b83-adf7-4f02214fe5f1\",\n                        \"name\": \"Denim Shirt\",\n                        \"description\": \"This is Denim Shirt\",\n                        \"price\": 500,\n                        \"stock\": 0,\n                        \"category\": {\n                            \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                            \"name\": \"Toys\",\n                            \"description\": \"This is Toys for kids\",\n                            \"created_by\": 1\n                        }\n                    },\n                    \"quantity\": 2,\n                    \"price\": 500\n                },\n                {\n                    \"product\": {\n                        \"id\": \"909692ef-75fe-4307-ab82-ea1bc53d477c\",\n                        \"name\": \"Polo Shirts\",\n                        \"description\": \"This is First Copy of Polo Shirt\",\n                        \"price\": 400,\n                        \"stock\": 0,\n                        \"category\": {\n                            \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                            \"name\": \"Toys\",\n                            \"description\": \"This is Toys for kids\",\n                            \"created_by\": 1\n                        }\n                    },\n                    \"quantity\": 1,\n                    \"price\": 400\n                }\n            ]\n        },\n        {\n            \"id\": \"556b7a66-cc2f-44f7-89bc-56e54327343e\",\n            \"status\": \"pending\",\n            \"total_price\": 0,\n            \"created_at\": \"2025-07-20T21:17:08.750416Z\",\n            \"items\": []\n        },\n        {\n            \"id\": \"add78d63-c921-4343-b108-6e5f60271248\",\n            \"status\": \"pending\",\n            \"total_price\": 0,\n            \"created_at\": \"2025-07-20T21:17:21.160010Z\",\n            \"items\": []\n        },\n        {\n            \"id\": \"908607bc-f7ae-48c3-9a16-c34c9b5c0fcd\",\n            \"status\": \"delivered\",\n            \"total_price\": 900,\n            \"created_at\": \"2025-07-20T21:18:59.442905Z\",\n            \"items\": [\n                {\n                    \"product\": {\n                        \"id\": \"263232af-8087-4e3d-b3ee-efa4cf6b1f82\",\n                        \"name\": \"Denim Jeans\",\n                        \"description\": \"This is First Copy of Denim Jeans\",\n                        \"price\": 500,\n                        \"stock\": 49,\n                        \"category\": {\n                            \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                            \"name\": \"Toys\",\n                            \"description\": \"This is Toys for kids\",\n                            \"created_by\": 1\n                        }\n                    },\n                    \"quantity\": 1,\n                    \"price\": 500\n                },\n                {\n                    \"product\": {\n                        \"id\": \"909692ef-75fe-4307-ab82-ea1bc53d477c\",\n                        \"name\": \"Polo Shirts\",\n                        \"description\": \"This is First Copy of Polo Shirt\",\n                        \"price\": 400,\n                        \"stock\": 0,\n                        \"category\": {\n                            \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                            \"name\": \"Toys\",\n                            \"description\": \"This is Toys for kids\",\n                            \"created_by\": 1\n                        }\n                    },\n                    \"quantity\": 1,\n                    \"price\": 400\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "New Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/category/",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Clothes\",\n    \"description\": \"This is clothes for Adult\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/category/",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"category",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 20:22:51 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "POST, PATCH, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "119"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"8564624c-d89e-4454-a64a-9ff1028a79d5\",\n    \"name\": \"Clothes\",\n    \"description\": \"This is clothes for Adult\",\n    \"created_by\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/category/",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category_id\": \"8564624c-d89e-4454-a64a-9ff1028a79d5\",\n    \"name\": \"admin\",\n    \"description\": \"This is clothes for Kids\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/category/?category_id=8564624c-d89e-4454-a64a-9ff1028a79d5",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "8564624c-d89e-4454-a64a-9ff1028a79d5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 20:27:15 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "POST, PATCH, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "116"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"8564624c-d89e-4454-a64a-9ff1028a79d5\",\n    \"name\": \"admin\",\n    \"description\": \"This is clothes for Kids\",\n    \"created_by\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/delete-category/?id=8564624c-d89e-4454-a64a-9ff1028a79d5",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"delete-category",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8564624c-d89e-4454-a64a-9ff1028a79d5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/delete-category/?id=8564624c-d89e-4454-a64a-9ff1028a79d5",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"delete-category",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "8564624c-d89e-4454-a64a-9ff1028a79d5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 20:30:23 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "44"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Category deleted successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/list-category/",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"list-category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/list-category/",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"list-category",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 20:32:55 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "234"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"09cfcd34-8441-4508-95e4-c95f70d053a7\",\n        \"name\": \"Clothes\",\n        \"description\": \"This is clothes for Adult\",\n        \"created_by\": 1\n    },\n    {\n        \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n        \"name\": \"Toys\",\n        \"description\": \"This is Toys for kids\",\n        \"created_by\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "New Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin@gmail.com\",\n    \"description\": \"admin\",\n    \"price\": \"500\",\n    \"stock\": \"5\",\n    \"category_id\": \"7d184361-5770-4b7d-82a4-86c549e00933\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/product/",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Denim Jeans\",\n    \"description\": \"This is First Copy of Denim Jeans\",\n    \"price\": \"500\",\n    \"stock\": \"5\",\n    \"category_id\": \"7d184361-5770-4b7d-82a4-86c549e00933\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/product/",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"product",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 20:38:34 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "POST, PATCH, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "264"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"49b7ed95-3660-4c75-a718-e3c996411632\",\n    \"name\": \"Denim Jeans\",\n    \"description\": \"This is First Copy of Denim Jeans\",\n    \"price\": 500,\n    \"stock\": 5,\n    \"category\": {\n        \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n        \"name\": \"Toys\",\n        \"description\": \"This is Toys for kids\",\n        \"created_by\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin@gmail.com\",\n    \"description\": \"admin\",\n    \"price\": \"500\",\n    \"stock\": \"5\",\n    \"category_id\": \"7d184361-5770-4b7d-82a4-86c549e00933\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/product/",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Product",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"49b7ed95-3660-4c75-a718-e3c996411632\",\n    \"name\": \"Polo Short\",\n    \"description\": \"This is Polo Shirt\",\n    \"price\": \"500\",\n    \"stock\": \"5\",\n    \"category_id\": \"7d184361-5770-4b7d-82a4-86c549e00933\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/product/",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 20:40:33 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "POST, PATCH, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "248"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"49b7ed95-3660-4c75-a718-e3c996411632\",\n    \"name\": \"Polo Short\",\n    \"description\": \"This is Polo Shirt\",\n    \"price\": 500,\n    \"stock\": 5,\n    \"category\": {\n        \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n        \"name\": \"Toys\",\n        \"description\": \"This is Toys for kids\",\n        \"created_by\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/delete-category/?id=8564624c-d89e-4454-a64a-9ff1028a79d5",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"delete-category",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8564624c-d89e-4454-a64a-9ff1028a79d5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Category Copy",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/delete-product/?id=49b7ed95-3660-4c75-a718-e3c996411632",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"delete-product",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "49b7ed95-3660-4c75-a718-e3c996411632"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 20:42:26 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "43"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product deleted successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}app/list-category/",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"list-category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Category Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/list-product",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"list-product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Mon, 21 Jul 2025 04:16:08 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "846"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total_pages\": 1,\n    \"current_page\": 1,\n    \"total_products\": 3,\n    \"results\": [\n        {\n            \"id\": \"87d5aa7a-8db0-4b83-adf7-4f02214fe5f1\",\n            \"name\": \"Denim Shirt\",\n            \"description\": \"This is Denim Shirt\",\n            \"price\": 500,\n            \"stock\": 0,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"909692ef-75fe-4307-ab82-ea1bc53d477c\",\n            \"name\": \"Polo Shirts\",\n            \"description\": \"This is First Copy of Polo Shirt\",\n            \"price\": 400,\n            \"stock\": 0,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"263232af-8087-4e3d-b3ee-efa4cf6b1f82\",\n            \"name\": \"Denim Jeans\",\n            \"description\": \"This is First Copy of Denim Jeans\",\n            \"price\": 500,\n            \"stock\": 49,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Min & Max Price Filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/list-product/?price_min=100&price_max=500",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"list-product",
+										""
+									],
+									"query": [
+										{
+											"key": "price_min",
+											"value": "100"
+										},
+										{
+											"key": "price_max",
+											"value": "500"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Mon, 21 Jul 2025 04:21:18 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "1111"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total_pages\": 1,\n    \"current_page\": 1,\n    \"total_products\": 4,\n    \"results\": [\n        {\n            \"id\": \"87d5aa7a-8db0-4b83-adf7-4f02214fe5f1\",\n            \"name\": \"Denim Shirt\",\n            \"description\": \"This is Denim Shirt\",\n            \"price\": 500,\n            \"stock\": 0,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"909692ef-75fe-4307-ab82-ea1bc53d477c\",\n            \"name\": \"Polo Shirts\",\n            \"description\": \"This is First Copy of Polo Shirt\",\n            \"price\": 400,\n            \"stock\": 0,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"263232af-8087-4e3d-b3ee-efa4cf6b1f82\",\n            \"name\": \"Denim Jeans\",\n            \"description\": \"This is First Copy of Denim Jeans\",\n            \"price\": 500,\n            \"stock\": 49,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"7c6d699d-faa1-4d61-92fb-68f1e0adb3ae\",\n            \"name\": \"Cobb Shirts\",\n            \"description\": \"This is First Copy of Cobb Shirt\",\n            \"price\": 400,\n            \"stock\": 10,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "In Stock",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/list-product/?in_stock=true",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"list-product",
+										""
+									],
+									"query": [
+										{
+											"key": "in_stock",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Mon, 21 Jul 2025 04:22:28 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "858"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total_pages\": 1,\n    \"current_page\": 1,\n    \"total_products\": 3,\n    \"results\": [\n        {\n            \"id\": \"263232af-8087-4e3d-b3ee-efa4cf6b1f82\",\n            \"name\": \"Denim Jeans\",\n            \"description\": \"This is First Copy of Denim Jeans\",\n            \"price\": 500,\n            \"stock\": 49,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"7c6d699d-faa1-4d61-92fb-68f1e0adb3ae\",\n            \"name\": \"Cobb Shirts\",\n            \"description\": \"This is First Copy of Cobb Shirt\",\n            \"price\": 400,\n            \"stock\": 10,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"ddbdb01b-0908-4cd8-a117-9bf894b192db\",\n            \"name\": \"ABC Shirts\",\n            \"description\": \"This is First Copy of ABC Shirt\",\n            \"price\": 75,\n            \"stock\": 10,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Category Filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/list-product/?category=7d184361-5770-4b7d-82a4-86c549e00933",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"list-product",
+										""
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "7d184361-5770-4b7d-82a4-86c549e00933"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Mon, 21 Jul 2025 04:26:17 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "1373"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total_pages\": 1,\n    \"current_page\": 1,\n    \"total_products\": 5,\n    \"results\": [\n        {\n            \"id\": \"87d5aa7a-8db0-4b83-adf7-4f02214fe5f1\",\n            \"name\": \"Denim Shirt\",\n            \"description\": \"This is Denim Shirt\",\n            \"price\": 500,\n            \"stock\": 0,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"909692ef-75fe-4307-ab82-ea1bc53d477c\",\n            \"name\": \"Polo Shirts\",\n            \"description\": \"This is First Copy of Polo Shirt\",\n            \"price\": 400,\n            \"stock\": 0,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"263232af-8087-4e3d-b3ee-efa4cf6b1f82\",\n            \"name\": \"Denim Jeans\",\n            \"description\": \"This is First Copy of Denim Jeans\",\n            \"price\": 500,\n            \"stock\": 49,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"7c6d699d-faa1-4d61-92fb-68f1e0adb3ae\",\n            \"name\": \"Cobb Shirts\",\n            \"description\": \"This is First Copy of Cobb Shirt\",\n            \"price\": 400,\n            \"stock\": 10,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        },\n        {\n            \"id\": \"ddbdb01b-0908-4cd8-a117-9bf894b192db\",\n            \"name\": \"ABC Shirts\",\n            \"description\": \"This is First Copy of ABC Shirt\",\n            \"price\": 75,\n            \"stock\": 10,\n            \"category\": {\n                \"id\": \"7d184361-5770-4b7d-82a4-86c549e00933\",\n                \"name\": \"Toys\",\n                \"description\": \"This is Toys for kids\",\n                \"created_by\": 1\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}app/update-order-status/",
+							"host": [
+								"{{BASE_URL}}app"
+							],
+							"path": [
+								"update-order-status",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"order_id\": \"908607bc-f7ae-48c3-9a16-c34c9b5c0fcd\",\n    \"status\": \"shipped\"  // 'pending', 'shipped', 'delivered'\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}app/update-order-status/",
+									"host": [
+										"{{BASE_URL}}app"
+									],
+									"path": [
+										"update-order-status",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 20 Jul 2025 21:20:03 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "allow",
+									"value": "PATCH, OPTIONS"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "content-length",
+									"value": "45"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order status updated to shipped\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
