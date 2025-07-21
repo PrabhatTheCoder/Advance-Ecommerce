@@ -49,7 +49,7 @@ You can use the provided Postman collection to test the entire API.
 ### 🔥 How to use
 1. Open Postman > Import > Upload `recipe-management-collection.json`.
 2. Set the environment variables for:
-   - `{{base_url}}` = `[{{BASE_URL}}app/category/](http://3.110.88.71:8000/)`
+   - `{{base_url}}` = `[{{BASE_URL}}app/](http://3.110.88.71:8000/)`
    - `{{access_token}}` (optional if using authenticated endpoints)
 3. Run your requests.
 
